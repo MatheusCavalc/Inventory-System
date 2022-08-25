@@ -1,0 +1,18 @@
+.badge {
+    --bs-badge-color: #000;
+}
+
+.img-avatar{
+    width: 50px;
+    height: 50px;
+}
+
+.msg {
+    background-color: #ffffff;
+    color: #0c5270;
+    border: 1px solid #ffffff;
+    width: 100%;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 10px;
+}
