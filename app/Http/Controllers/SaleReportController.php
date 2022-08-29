@@ -37,9 +37,11 @@ class SaleReportController extends Controller
         //echo date('Y-m'). '-01 00:00:00';
 
         return view('reports.date', ['user' => $user,
-                                  'daily' => $daily,
-                                  'total' => $total
-                                 ]);
+                                     'daily' => $daily,
+                                     'total' => $total,
+                                     'start_date' => $start_date,
+                                     'end_date' => $end_date
+                                    ]);
 
     }
 

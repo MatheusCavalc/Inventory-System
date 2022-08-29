@@ -25,6 +25,15 @@ class UserSeeder extends Seeder
             'status' => 'active',
             'created_at' => '2022-08-24 17:09:51',
             'updated_at' => '2022-08-24 17:09:51',
+
+        ]);
+
+        DB::table('teams')->insert([
+            'user_id' => 1,
+            'name' => 'admins team',
+            'personal_team' => 1,
+            'created_at' => '2022-08-24 17:09:51',
+            'updated_at' => '2022-08-24 17:09:51',
         ]);
     }
 }

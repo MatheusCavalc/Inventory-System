@@ -4,8 +4,14 @@
 
 @section('content')
 
+<div class="row mt-4">
+    <div class="col-5">
+        <h5>Daily <?php echo date("F j, Y");?> sales info:</h3>
+    </div>
+</div>
 
-<div class="row">
+
+<div class="row mt-2">
     <div class="col-11">
         <table class="table table-sm table-striped table-bordered table-condensed">
             <thead>
@@ -35,10 +41,7 @@
     </div>
 
     <span>
-
         <p>Total: {{ $total }}</p>
-
-
     </span>
 
 

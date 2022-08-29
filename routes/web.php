@@ -60,7 +60,7 @@ Route::delete('/user/{id}', [UserController::class, 'delete'])->middleware('auth
 
 
 
-/*
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -70,4 +70,4 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
-*/
+
