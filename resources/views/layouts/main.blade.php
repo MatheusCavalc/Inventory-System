@@ -124,7 +124,7 @@
                 </div>
             </div>
             <div class="col py-3">
-                <strong style="margin-left: 83%"><?php echo date("F j, Y, g:i a");?></strong>
+                <strong style="margin-left: 81%"><?php echo date("F j, Y, g:i a");?></strong>
 
 
                 @if(session('msg'))
