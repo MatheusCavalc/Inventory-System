@@ -7,7 +7,7 @@ $ php artisan migrate
 ```
 
 ```bash
-$ php artisan db:seed --class=UserSeeder^C
+$ php artisan db:seed --class=UserSeeder
 ```
 
 ## Login da aplicacao ##
