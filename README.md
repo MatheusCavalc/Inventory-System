@@ -1,6 +1,6 @@
 ## Setup ##
 
-Iniciando a aplicacao
+Iniciando a aplicação
 
 ```bash
 $ php artisan migrate
@@ -10,7 +10,7 @@ $ php artisan migrate
 $ php artisan db:seed --class=UserSeeder
 ```
 
-## Login da aplicacao ##
+## Login da aplicação ##
 
 User: admin@admin.com
 <br>
