@@ -61,7 +61,7 @@
                 </div>
              </div>
             </div>
-            <button type="submit" name="add_product" class="btn btn-danger">Add product</button>
+            <button type="submit" name="add_product" class="btn btn-primary">Add product</button>
         </form>
        </div>
       </div>

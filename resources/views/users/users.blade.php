@@ -28,19 +28,21 @@
             <td>{{ $users->status }}</td>
             <td>{{ $users->updated_at }}</td>
             <td>
+                <div class="d-flex flex-row mb-3">
+                    @if ($user->id == $users->id)
+                        <a class="btn btn-primary" href="/user/profile"><i class="fas fa-pen"></i></a>
+                    @else
+                        <a class="btn btn-primary" href="/user/edit/{{ $users->id }}"><i class="fas fa-pen"></i></a>
+                    @endif
 
-                @if ($user->id == $users->id)
-                    <a class="btn btn-primary" href="/user/profile"><i class="fas fa-pen"></i></a>
-                @else
-                    <a class="btn btn-primary" href="/user/edit/{{ $users->id }}"><i class="fas fa-pen"></i></a>
-                @endif
-
-                <form action="/user/{{ $users->id }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger delete-btn"><i class="fas fa-trash"></i></button>
-                </form>
-
+                    <form action="/user/{{ $users->id }}"
+                          method="POST"
+                          onsubmit="return confirm('Voce tem certeza?');">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger delete-btn"><i class="fas fa-trash"></i></button>
+                    </form>
+                </div>
             </td>
            </tr>
         @endforeach

@@ -10,7 +10,8 @@ use App\Models\Sale;
 
 class InventoryController extends Controller
 {
-    public function index() {
+    public function index()
+    {
 
         $user = auth()->user();
 
@@ -22,17 +23,16 @@ class InventoryController extends Controller
             $sales = Sale::count();
 
             $products_sold = Sale::select('products.name', 'sales.quantity', 'sales.price')
-            ->leftJoin('products', 'products.id', '=', 'sales.product_id')
-            ->paginate(5)->sortByDesc('quantity');
+                ->leftJoin('products', 'products.id', '=', 'sales.product_id')
+                ->paginate(5)->sortByDesc('quantity');
 
             $recent_sales = Sale::select('sales.id', 'sales.quantity', 'sales.price', 'sales.updated_at', 'products.name')
-            ->leftJoin('products', 'sales.product_id', '=', 'products.id')
-            ->paginate(5)->sortByDesc('updated_at');
+                ->leftJoin('products', 'sales.product_id', '=', 'products.id')
+                ->paginate(5)->sortByDesc('updated_at');
 
             $recent_products = Product::select('products.id', 'products.name', 'products.sale_price', 'products.media', 'categories.name AS category')
-            ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
-            ->paginate(5)->sortByDesc('created_at');
-
+                ->leftJoin('categories', 'categories.id', '=', 'products.category_id')
+                ->paginate(5)->sortByDesc('created_at');
         } else {
 
             $users = '';
@@ -43,17 +43,17 @@ class InventoryController extends Controller
             $products_sold = '';
             $recent_sales = '';
             $recent_products = '';
-
         }
 
-        return view('admin', ['user' => $user,
-                              'users' => $users,
-                              'products' => $products,
-                              'categories' => $categories,
-                              'sales' => $sales,
-                              'products_sold' => $products_sold,
-                              'recent_sales' => $recent_sales,
-                              'recent_products' => $recent_products
-                             ]);
+        return view('admin', [
+            'user' => $user,
+            'users' => $users,
+            'products' => $products,
+            'categories' => $categories,
+            'sales' => $sales,
+            'products_sold' => $products_sold,
+            'recent_sales' => $recent_sales,
+            'recent_products' => $recent_products
+        ]);
     }
 }

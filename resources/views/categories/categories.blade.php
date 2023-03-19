@@ -38,15 +38,15 @@
                       <td>{{ $category->id }}</td>
                       <td>{{ $category->name }}</td>
                       <td>
+                        <div class="d-flex justify-content-center">
+                            <a class="btn btn-primary" href="/category/edit/{{ $category->id }}"><i class="fas fa-pen"></i></a>
 
-                        <a class="btn btn-primary" href="/category/edit/{{ $category->id }}"><i class="fas fa-pen"></i></a>
-
-                        <form action="/category/{{ $category->id }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger delete-btn"><i class="fas fa-trash"></i></button>
-                        </form>
-
+                            <form action="/category/{{ $category->id }}" method="POST" onsubmit="return confirm('Are you sure?');">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger delete-btn"><i class="fas fa-trash"></i></button>
+                            </form>
+                        </div>
                       </td>
                     </tr>
                   @endforeach
