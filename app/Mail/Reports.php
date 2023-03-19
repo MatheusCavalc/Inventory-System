@@ -26,6 +26,7 @@ class Reports extends Mailable
      */
     public function build()
     {
+
         return $this->view('mail.daily');
     }
 }
